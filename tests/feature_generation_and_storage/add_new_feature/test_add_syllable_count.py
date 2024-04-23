@@ -34,6 +34,5 @@ class TestAddSyllableCount(unittest.TestCase):
         self.assertEqual(7, sentence.total_syllables_stop_words_excluded)
         self.assertAlmostEqual(7/6, sentence.total_syllables_per_word_stop_words_excluded)
 
-
 if __name__ == "__main__":
     unittest.main()

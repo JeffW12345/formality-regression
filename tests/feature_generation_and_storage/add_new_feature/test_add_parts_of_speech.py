@@ -29,6 +29,15 @@ class TestAddPartsOfSpeech(unittest.TestCase):
         self.add_parts_of_speech.update_with_number_of_stop_words(sentence, words_in_sentence)
         self.assertEqual(sentence.number_of_stop_words, 3)
 
+    def test_update_with_proportion_of_stop_words(self):
+        sentence = Sentence()
+        sentence.length_in_words = 9
+        sentence.number_of_stop_words = 3
+
+        self.add_parts_of_speech.update_with_proportion_of_stop_words(sentence)
+
+        self.assertEqual(sentence.proportion_of_stop_words, 0.333)
+
 
 if __name__ == "__main__":
     unittest.main()

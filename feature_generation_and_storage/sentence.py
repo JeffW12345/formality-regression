@@ -26,6 +26,7 @@ class Sentence:
         self.number_of_pronouns = None
 
         self.number_of_stop_words = None
+        self.proportion_of_stop_words = None
 
 
 
