@@ -28,5 +28,8 @@ class Sentence:
         self.number_of_stop_words = None
         self.proportion_of_stop_words = None
 
+        self.number_of_spelling_and_grammatical_errors = None
+        self.spelling_and_grammar_errors_per_character = None
+
 
 
