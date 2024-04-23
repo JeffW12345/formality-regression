@@ -31,5 +31,9 @@ class Sentence:
         self.number_of_spelling_and_grammatical_errors = None
         self.spelling_and_grammar_errors_per_character = None
 
+        self.positive_vader_score = None
+        self.negative_vader_score = None
+        self.neutral_vader_score = None
+        self.compound_vader_score = None
 
 
