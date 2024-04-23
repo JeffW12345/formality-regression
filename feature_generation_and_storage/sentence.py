@@ -19,4 +19,13 @@ class Sentence:
         self.total_syllables_stop_words_included = None
         self.total_syllables_per_word_stop_words_included = None
 
+        self.number_of_nouns = None
+        self.number_of_adjectives = None
+        self.number_of_adverbs = None
+        self.number_of_verbs = None
+        self.number_of_pronouns = None
+
+        self.number_of_stop_words = None
+
+
 

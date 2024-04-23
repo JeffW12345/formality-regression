@@ -12,7 +12,7 @@ import syllables
 
 class AddSyllableCount(AddNewFeature):
     def update_sentence_object(self, sentence: Sentence) -> None:
-        words_in_sentence = sentence.sentence_content.split(" ")
+        words_in_sentence: list = sentence.sentence_content.split(" ")
 
         self.update_syllable_data_stop_words_included(sentence, words_in_sentence)
 
@@ -29,7 +29,7 @@ class AddSyllableCount(AddNewFeature):
 
     def update_syllable_data_stop_words_excluded(self, sentence: Sentence, words_in_sentence: list) -> None:
         stop_words = set(stopwords.words("english"))
-        sentence_without_stop_words = [word for word in words_in_sentence if word.casefold() not in stop_words]
+        sentence_without_stop_words: list = [word for word in words_in_sentence if word.casefold() not in stop_words]
 
         total_syllables_stop_words_excluded = 0
         for word in sentence_without_stop_words:
