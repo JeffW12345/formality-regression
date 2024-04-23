@@ -1,5 +1,3 @@
-import math
-
 import nltk
 
 nltk.download("stopwords")
@@ -43,6 +41,10 @@ class AddPartsOfSpeech(AddNewFeature):
 
         self.update_with_number_of_stop_words(sentence, words_in_sentence)
         self.update_with_proportion_of_stop_words(sentence)
+
+        end_time = datetime.datetime.now()
+        elapsed_time = (end_time - start_time).total_seconds()
+        # print("Time elapsed add parts of speech:", elapsed_time, "seconds")
 
     def update_with_number_of_stop_words(self, sentence: Sentence, words_in_sentence: list) -> None:
         stop_words = set(stopwords.words("english"))
