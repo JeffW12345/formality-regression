@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 from pandas import DataFrame
 
-from feature_generation_and_storage.results.results import Results
+from results.results import Results
 
 
 class MachineLearningAlgorithm(ABC):

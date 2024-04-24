@@ -1,6 +1,6 @@
 import unittest
 
-from feature_generation_and_storage.add_new_feature.add_sentiment import AddSentiment
+from feature_generation_and_storage.additional_feature_creation.add_sentiment import AddSentiment
 from feature_generation_and_storage.sentence_model import Sentence
 
 

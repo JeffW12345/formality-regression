@@ -3,7 +3,7 @@ from unittest.mock import MagicMock
 
 from nltk.corpus import stopwords
 
-from feature_generation_and_storage.add_new_feature.add_syllable_count import AddSyllableCount
+from feature_generation_and_storage.additional_feature_creation.add_syllable_count import AddSyllableCount
 from feature_generation_and_storage.sentence_model import Sentence
 
 

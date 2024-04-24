@@ -1,6 +1,6 @@
 import unittest
 
-from feature_generation_and_storage.add_new_feature.add_parts_of_speech import AddPartsOfSpeech
+from feature_generation_and_storage.additional_feature_creation.add_parts_of_speech import AddPartsOfSpeech
 from feature_generation_and_storage.sentence_model import Sentence
 
 
