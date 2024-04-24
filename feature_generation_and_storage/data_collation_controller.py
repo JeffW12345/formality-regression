@@ -1,5 +1,3 @@
-import datetime
-
 import pandas as pd
 
 from feature_generation_and_storage.add_new_feature.add_parts_of_speech import AddPartsOfSpeech
@@ -20,19 +18,9 @@ def create_feature_and_target_file():
         AddSyllableCount()
     ]
 
-    index = 0
-    start_time = datetime.datetime.now()
-
     for sentence in sentence_store:
         for add_new_feature_subclass in list_of_add_new_feature_subclasses:
             add_new_feature_subclass.update_sentence_object(sentence)
-
-        index += 1
-        if index % 100 == 0:
-            curr_time = datetime.datetime.now()
-            elapsed_time = (curr_time - start_time).total_seconds()
-            print("Time elapsed: ", elapsed_time, "seconds")
-            print(str(index))
 
     file_path = "csv_files/complete_data.csv"
 
