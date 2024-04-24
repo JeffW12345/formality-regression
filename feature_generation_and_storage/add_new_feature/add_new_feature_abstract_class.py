@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-from feature_generation_and_storage.sentence import Sentence
+from feature_generation_and_storage.sentence_model import Sentence
 
 
 class AddNewFeature(ABC):

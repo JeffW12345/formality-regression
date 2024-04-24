@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 from feature_generation_and_storage.add_new_feature.add_spelling_and_grammar_count import AddSpellingAndGrammarCount
-from feature_generation_and_storage.sentence import Sentence
+from feature_generation_and_storage.sentence_model import Sentence
 
 class TestAddSpellingAndGrammarCount(unittest.TestCase):
     def setUp(self):

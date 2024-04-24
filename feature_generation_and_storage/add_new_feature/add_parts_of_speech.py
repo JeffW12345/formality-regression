@@ -3,7 +3,7 @@ import nltk
 nltk.download("stopwords")
 
 from feature_generation_and_storage.add_new_feature.add_new_feature_abstract_class import AddNewFeature
-from feature_generation_and_storage.sentence import Sentence
+from feature_generation_and_storage.sentence_model import Sentence
 
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords

@@ -4,7 +4,7 @@ from unittest.mock import MagicMock
 from nltk.corpus import stopwords
 
 from feature_generation_and_storage.add_new_feature.add_syllable_count import AddSyllableCount
-from feature_generation_and_storage.sentence import Sentence
+from feature_generation_and_storage.sentence_model import Sentence
 
 
 class TestAddSyllableCount(unittest.TestCase):
