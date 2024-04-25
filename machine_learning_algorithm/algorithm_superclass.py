@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+import pandas as pd
 from pandas import DataFrame
 
 from results.results import Results
@@ -8,24 +9,10 @@ from results.results import Results
 class MachineLearningAlgorithm(ABC):
     def __init__(self):
         self.results: Results = Results()
-        self.train_X_y: tuple = ()
+        self.df: DataFrame = pd.read_csv(r"..\csv_files\complete_data.csv")
+        self.X = self.df.drop(['formality_score_from_raters', 'sentence_content'], axis=1).to_numpy()
+        self.y = self.df['formality_score_from_raters'].to_numpy()
 
     @abstractmethod
-    def co_ordinate_actions(self) -> None:
-        pass
-
-    @abstractmethod
-    def import_data_from_file(self) -> DataFrame:
-        pass
-
-    @abstractmethod
-    def process_data(self) -> None:
-        pass
-
-    @abstractmethod
-    def publish_results(self, ) -> None:
-        pass
-
-    @abstractmethod
-    def visualise_data(self) -> None:
+    def train_and_test(self) -> None:
         pass

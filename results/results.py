@@ -5,7 +5,7 @@ import pandas as pd
 
 class Results:
     def __init__(self):
-        self.classifier_name = None
+        self.algorithm_name = None
         self.root_mean_squared_error = None
         self.r_squared = None
         self.mean_absolute_error = None
