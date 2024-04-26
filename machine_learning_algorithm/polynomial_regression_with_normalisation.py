@@ -23,20 +23,16 @@ class PolynomialRegressionWithNormalization(MachineLearningAlgorithm):
             X_train, X_test = self.X[train_index], self.X[test_index]
             y_train, y_test = self.y[train_index], self.y[test_index]
 
-            # Create a Pipeline with normalization and polynomial features
             model = Pipeline([
                 ("scaler", MinMaxScaler()),
                 ("poly", PolynomialFeatures(degree=self.degree)),
                 ("regression", LinearRegression())
             ])
 
-            # Train the model
             model.fit(X_train, y_train)
 
-            # Make predictions
             y_pred = model.predict(X_test)
 
-            # Compute evaluation metrics
             mean_squared_error_scores.append(mean_squared_error(y_test, y_pred))
             root_mean_squared_error = np.sqrt(mean_squared_error(y_test, y_pred))
             rmse_scores.append(root_mean_squared_error)

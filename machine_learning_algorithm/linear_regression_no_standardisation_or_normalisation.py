@@ -41,10 +41,3 @@ class LinearRegressionNoStandardisationOrNormalisation(MachineLearningAlgorithm)
         self.results.r_squared = np.mean(r2_scores)
         self.results.algorithm_name = "Linear Regression No Normalisation or Standardisation"
         self.results.print_to_spreadsheet()
-
-
-if __name__ == "__main__":
-    # Initialize MyLinearRegression with data file
-    my_model = LinearRegressionNoStandardisationOrNormalisation()
-    # Train and test the model
-    my_model.train_test_and_publish()
