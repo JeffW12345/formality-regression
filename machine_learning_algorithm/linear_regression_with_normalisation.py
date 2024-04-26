@@ -1,16 +1,17 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import KFold, train_test_split
-
+from sklearn.model_selection import KFold
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import MinMaxScaler
 from machine_learning_algorithm.algorithm_superclass import MachineLearningAlgorithm
 
 
-class LinearRegressionImplementation(MachineLearningAlgorithm):
+class LinearRegressionWithNormalization(MachineLearningAlgorithm):
     def __init__(self):
         super().__init__()
 
-    def train_and_test(self) -> None:
+    def train_test_and_publish(self) -> None:
         kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
         mean_squared_error_scores = []
@@ -21,7 +22,11 @@ class LinearRegressionImplementation(MachineLearningAlgorithm):
             X_train, X_test = self.X[train_index], self.X[test_index]
             y_train, y_test = self.y[train_index], self.y[test_index]
 
-            model = LinearRegression()
+            model = Pipeline([
+                ("scaler", MinMaxScaler()),
+                ("regression", LinearRegression())
+            ])
+
             model.fit(X_train, y_train)
 
             y_pred = model.predict(X_test)
@@ -39,14 +44,5 @@ class LinearRegressionImplementation(MachineLearningAlgorithm):
         self.results.mean_absolute_error = np.mean(mean_squared_error_scores)
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
-        self.results.algorithm_name = "Linear Regression"
+        self.results.algorithm_name = "Linear regression"
         self.results.print_to_spreadsheet()
-
-
-if __name__ == "__main__":
-    # Initialize MyLinearRegression with data file
-    my_model = LinearRegressionImplementation()
-    # Train and test the model
-    my_model.train_and_test()
-    # Visualize the data and the regression line
-    my_model.visualize_data()

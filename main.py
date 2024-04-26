@@ -1,16 +1,25 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from machine_learning_algorithm.linear_regression_with_normalisation import LinearRegressionWithNormalization
+from machine_learning_algorithm.linear_regresssion_with_standardisation import LinearRegressionWithStandardization
+from machine_learning_algorithm.polynomial_regression_no_standardisation_or_normalisation import \
+    LinearRegressionNoStandardisationOrNormalisation
+from machine_learning_algorithm.polynomial_regression_with_normalisation import PolynomialRegressionWithNormalization
+from machine_learning_algorithm.polynomial_regression_with_standardisation import \
+    PolynomialRegressionWithStandardization
 
 
-# Press the green button in the gutter to run the script.
+def perform_and_publish_tests() -> None:
+    algorithms = [
+        LinearRegressionNoStandardisationOrNormalisation(),
+        LinearRegressionWithNormalization(),
+        LinearRegressionWithStandardization(),
+        LinearRegressionNoStandardisationOrNormalisation(),
+        PolynomialRegressionWithNormalization(),
+        PolynomialRegressionWithStandardization()
+    ]
+
+    for algorithm in algorithms:
+        algorithm.train_test_and_publish()
+
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    perform_and_publish_tests()
