@@ -11,6 +11,10 @@ from machine_learning_algorithm.random_forest_no_standardisation_or_normalisatio
     RandomForestRegressionNoStandardisationOrNormalisation
 from machine_learning_algorithm.random_forest_with_normalisation import RandomForestRegressionWithNormalization
 from machine_learning_algorithm.random_forest_with_standardisation import RandomForestRegressionWithStandardization
+from machine_learning_algorithm.support_vector_machine_no_standardisation_or_normalisation import \
+    SVMRegressionNoStandardisationOrNormalisation
+from machine_learning_algorithm.support_vector_machine_with_standardisation import SVMRegressionWithStandardization
+from machine_learning_algorithm.support_vector_with_machine_normalisation import SVMRegressionWithNormalization
 
 
 def perform_and_publish_tests() -> None:
@@ -25,7 +29,11 @@ def perform_and_publish_tests() -> None:
 
         RandomForestRegressionNoStandardisationOrNormalisation(),
         RandomForestRegressionWithNormalization(),
-        RandomForestRegressionWithStandardization()
+        RandomForestRegressionWithStandardization(),
+
+        SVMRegressionNoStandardisationOrNormalisation(),
+        SVMRegressionWithNormalization(),
+        SVMRegressionWithStandardization()
     ]
 
     for algorithm in algorithms:
