@@ -7,6 +7,10 @@ from machine_learning_algorithm.polynomial_regression_no_standardisation_or_norm
 from machine_learning_algorithm.polynomial_regression_with_normalisation import PolynomialRegressionWithNormalization
 from machine_learning_algorithm.polynomial_regression_with_standardisation import \
     PolynomialRegressionWithStandardization
+from machine_learning_algorithm.random_forest_no_standardisation_or_normalisation import \
+    RandomForestRegressionNoStandardisationOrNormalisation
+from machine_learning_algorithm.random_forest_with_normalisation import RandomForestRegressionWithNormalization
+from machine_learning_algorithm.random_forest_with_standardisation import RandomForestRegressionWithStandardization
 
 
 def perform_and_publish_tests() -> None:
@@ -17,7 +21,11 @@ def perform_and_publish_tests() -> None:
 
         PolynomialRegressionNoStandardisationOrNormalisation(),
         PolynomialRegressionWithNormalization(),
-        PolynomialRegressionWithStandardization()
+        PolynomialRegressionWithStandardization(),
+
+        RandomForestRegressionNoStandardisationOrNormalisation(),
+        RandomForestRegressionWithNormalization(),
+        RandomForestRegressionWithStandardization()
     ]
 
     for algorithm in algorithms:

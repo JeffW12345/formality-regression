@@ -25,6 +25,8 @@ character in the sentence, and how emotionally charged the content is.
 
 The additional feature generation and collation is controlled by the data_collection_controller.py module. 
 
+**CSV files containing features and target**
+
 The original CSV file and the CSV file with the additional features (called complete_data.csv) are stored in the 
 csv_files folder.
 
@@ -36,3 +38,9 @@ MachineLearningAlgorithm class, which is an abstract class with an abstract meth
 
 The 'main' class in the root folder iterates through a list of objects of type MachineLearningAlgorithm, and runs each
 object's 'train_test_and_publish()' method in turn. 
+
+RUNNING THE TESTS
+=================
+
+The tests can be run by running the 'main' module. Doing so will result in the 'results.csv' csv file in the 'results' 
+directory being updated with the latest results.
