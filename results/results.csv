@@ -1,7 +1,0 @@
-Algorithm Name,Root Mean Squared Error,R Squared,Mean Absolute Error
-Linear Regression No Normalisation or Standardisation,0.861,0.569,0.741
-Linear regression with normalisation,0.861,0.569,0.741
-Linear Regression With Standardization,0.861,0.569,0.741
-Polynomial Regression Without Standardisation Or Normalisation (Degree 2),0.867,0.563,0.751
-Polynomial Regression With Normalization (Degree 2),0.866,0.563,0.751
-Polynomial Regression With Standardization (Degree 2),0.867,0.563,0.751

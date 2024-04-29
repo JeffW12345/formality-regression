@@ -45,5 +45,6 @@ class LinearRegressionWithStandardization(MachineLearningAlgorithm):
         self.results.mean_absolute_error = np.mean(mean_squared_error_scores)
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
-        self.results.algorithm_name = "Linear Regression With Standardization"
+        self.results.has_standardisation = True
+        self.results.algorithm_name = "Linear Regression"
         self.results.print_to_spreadsheet()

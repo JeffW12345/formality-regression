@@ -44,5 +44,5 @@ class PolynomialRegressionNoStandardisationOrNormalisation(MachineLearningAlgori
         self.results.mean_absolute_error = np.mean(mean_squared_error_scores)
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
-        self.results.algorithm_name = f"Polynomial Regression No Standardisation Or Normalisation (Degree {self.degree})"
+        self.results.algorithm_name = f"Polynomial Regression (Degree {self.degree})"
         self.results.print_to_spreadsheet()
