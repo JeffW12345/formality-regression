@@ -4,6 +4,20 @@ from string import capwords
 import pandas as pd
 
 
+def _round_dataframe_to_three_decimal_places(df) -> None:
+    numeric_cols = df.select_dtypes(include=['number']).columns
+    df[numeric_cols] = df[numeric_cols].round(3)
+
+
+def _set_directory_to_current_location() -> None:
+    current_dir = os.path.dirname(os.path.realpath(__file__))
+    os.chdir(current_dir)
+
+
+def _format_headers(df) -> None:
+    df.columns = [capwords(col.replace('_', ' ')) for col in df.columns]
+
+
 class Results:
     def __init__(self):
         self.algorithm_name = None
@@ -13,26 +27,12 @@ class Results:
         self.r_squared = None
 
     def print_to_spreadsheet(self) -> None:
-        self._set_directory_to_current_location()
+        _set_directory_to_current_location()
         filename = "results.csv"
         df = pd.DataFrame([vars(self)])
 
-        self._round_dataframe_to_three_decimal_places(df)
+        _round_dataframe_to_three_decimal_places(df)
 
-        self._format_headers(df)
+        _format_headers(df)
 
-        if os.path.exists(filename):
-            df.to_csv(filename, index=False, mode='a', header=False)
-        else:
-            df.to_csv(filename, index=False)
-
-    def _round_dataframe_to_three_decimal_places(self, df) -> None:
-        numeric_cols = df.select_dtypes(include=['number']).columns
-        df[numeric_cols] = df[numeric_cols].round(3)
-
-    def _set_directory_to_current_location(self) -> None:
-        current_dir = os.path.dirname(os.path.realpath(__file__))
-        os.chdir(current_dir)
-
-    def _format_headers(self, df) -> None:
-        df.columns = [capwords(col.replace('_', ' ')) for col in df.columns]
+        df.to_csv(filename, index=False)
