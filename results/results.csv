@@ -1,13 +1,7 @@
 Algorithm Name,Has Normalisation,Has Standardisation,Root Mean Squared Error,R Squared
 Linear Regression,False,False,0.861,0.569
-Linear Regression,True,False,0.861,0.569
-Linear Regression,False,True,0.861,0.569
 Polynomial Regression (Degree 2),False,False,0.867,0.563
-Polynomial Regression (Degree 2),True,False,0.866,0.563
-Polynomial Regression (Degree 2),False,True,0.867,0.563
 Random Forest Regression,False,False,0.856,0.574
-Random Forest Regression,True,False,0.856,0.574
-Random Forest Regression,False,True,0.855,0.574
 Support Vector Machine Regression,False,False,1.113,0.279
 Support Vector Machine Regression,True,False,0.838,0.591
 Support Vector Machine Regression,False,True,0.849,0.58
