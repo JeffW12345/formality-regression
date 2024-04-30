@@ -40,7 +40,7 @@ class RandomForestRegressionWithStandardization(MachineLearningAlgorithm):
 
         self.publish_results(r2_scores, rmse_scores)
 
-    def publish_results(self, r2_scores, rmse_scores) -> None:
+    def publish_results(self, r2_scores: list, rmse_scores: list) -> None:
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
         self.results.has_standardisation = True
