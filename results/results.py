@@ -2,6 +2,7 @@ import os
 from string import capwords
 
 import pandas as pd
+from pandas import DataFrame
 
 
 def _round_dataframe_to_three_decimal_places(df) -> None:
@@ -28,11 +29,14 @@ class Results:
 
     def print_to_spreadsheet(self) -> None:
         _set_directory_to_current_location()
-        filename = "results.csv"
-        df = pd.DataFrame([vars(self)])
+        filename: str = "results.csv"
+        data_to_print_to_spreadsheet: DataFrame = pd.DataFrame([vars(self)])
 
-        _round_dataframe_to_three_decimal_places(df)
+        _round_dataframe_to_three_decimal_places(data_to_print_to_spreadsheet)
 
-        _format_headers(df)
+        _format_headers(data_to_print_to_spreadsheet)
 
-        df.to_csv(filename, index=False)
+        if os.path.exists(filename):
+            data_to_print_to_spreadsheet.to_csv(filename, index=False, mode='a', header=False)
+        else:
+            data_to_print_to_spreadsheet.to_csv(filename, index=False)

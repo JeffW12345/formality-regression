@@ -12,7 +12,7 @@ class SVMRegressionNoStandardisationOrNormalisation(MachineLearningAlgorithm):
         self.C = C
         self.epsilon = epsilon
 
-    def train_test_and_publish(self) -> None:
+    def train_and_test(self) -> None:
         kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
         for train_index, test_index in kf.split(self.X):
@@ -27,8 +27,6 @@ class SVMRegressionNoStandardisationOrNormalisation(MachineLearningAlgorithm):
             mse = mean_squared_error(y_test, y_pred)
             self.rmse_scores.append(np.sqrt(mse))
             self.r2_scores.append(r2_score(y_test, y_pred))
-
-        self.publish_results()
 
     def publish_results(self) -> None:
         self.update_mean_squared_error_and_r_squared_in_results_object()

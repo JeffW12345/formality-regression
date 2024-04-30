@@ -13,7 +13,7 @@ class PolynomialRegressionWithNormalization(MachineLearningAlgorithm):
         super().__init__()
         self.degree = degree
 
-    def train_test_and_publish(self) -> None:
+    def train_and_test(self) -> None:
         kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
         self.rmse_scores = []
@@ -38,8 +38,6 @@ class PolynomialRegressionWithNormalization(MachineLearningAlgorithm):
 
             r2 = r2_score(y_test, y_pred)
             self.r2_scores.append(r2)
-
-        self.publish_results()
 
     def publish_results(self) -> None:
         self.update_mean_squared_error_and_r_squared_in_results_object()
