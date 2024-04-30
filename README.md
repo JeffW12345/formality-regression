@@ -34,7 +34,8 @@ The original CSV file and the CSV file with the additional features (called comp
 
 **Exploring the data**
 
-The data_summaries package contains an ExploreDataRelationships class which has methods that do the following:
+The 'data_relationship_exploration' package contains a class called 'ExploreDataRelationships' class which has methods 
+that do the following:
 
 - Produce a spreadsheet that provides correlations data for the features and the target data, making it possible to 
 explore correlations between features and between individual features and the target (the sentence ratings).
