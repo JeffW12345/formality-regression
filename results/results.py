@@ -12,7 +12,7 @@ class Results:
         self.root_mean_squared_error = None
         self.r_squared = None
 
-    def print_to_spreadsheet(self):
+    def print_to_spreadsheet(self) -> None:
         self._set_directory_to_current_location()
         filename = "results.csv"
         df = pd.DataFrame([vars(self)])
@@ -26,13 +26,13 @@ class Results:
         else:
             df.to_csv(filename, index=False)
 
-    def _round_dataframe_to_three_decimal_places(self, df):
+    def _round_dataframe_to_three_decimal_places(self, df) -> None:
         numeric_cols = df.select_dtypes(include=['number']).columns
         df[numeric_cols] = df[numeric_cols].round(3)
 
-    def _set_directory_to_current_location(self):
+    def _set_directory_to_current_location(self) -> None:
         current_dir = os.path.dirname(os.path.realpath(__file__))
         os.chdir(current_dir)
 
-    def _format_headers(self, df):
+    def _format_headers(self, df) -> None:
         df.columns = [capwords(col.replace('_', ' ')) for col in df.columns]

@@ -42,7 +42,7 @@ class RandomForestRegressionWithNormalization(MachineLearningAlgorithm):
 
         self.publish_results(r2_scores, rmse_scores)
 
-    def publish_results(self, r2_scores, rmse_scores):
+    def publish_results(self, r2_scores, rmse_scores) -> None:
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
         self.results.has_normalisation = True

@@ -1,13 +1,11 @@
 import nltk
+import syllables
 
 nltk.download("stopwords")
 
 from feature_generation_and_storage.additional_feature_creation.add_new_feature_abstract_class import AddNewFeature
 from feature_generation_and_storage.sentence_model import Sentence
-
 from nltk.corpus import stopwords
-
-import syllables
 
 
 class AddSyllableCount(AddNewFeature):

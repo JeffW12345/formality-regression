@@ -5,7 +5,7 @@ from feature_generation_and_storage.sentence_model import Sentence
 from feature_generation_and_storage.sentence_storage import sentence_store
 
 
-def import_data_and_store_sentence_objects():
+def import_data_and_store_sentence_objects() -> None:
     file_path = "../source_target_and_feature_csv_files/original_formality_dataset.csv"
 
     if os.path.exists(file_path):

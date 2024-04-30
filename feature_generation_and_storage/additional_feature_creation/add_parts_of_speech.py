@@ -42,11 +42,10 @@ class AddPartsOfSpeech(AddNewFeature):
         self.update_with_number_of_stop_words(sentence, words_in_sentence)
         self.update_with_proportion_of_stop_words(sentence)
 
-
     def update_with_number_of_stop_words(self, sentence: Sentence, words_in_sentence: list) -> None:
         stop_words = set(stopwords.words("english"))
         sentence_with_only_stop_words: list = [word for word in words_in_sentence if word.casefold() in stop_words]
         sentence.number_of_stop_words = len(sentence_with_only_stop_words)
 
-    def update_with_proportion_of_stop_words(self, sentence):
+    def update_with_proportion_of_stop_words(self, sentence: Sentence) -> None:
         sentence.proportion_of_stop_words = round(sentence.number_of_stop_words / sentence.length_in_words, 3)

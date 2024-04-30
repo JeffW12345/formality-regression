@@ -9,7 +9,7 @@ from feature_generation_and_storage.import_source_data import import_data_and_st
 from feature_generation_and_storage.sentence_storage import sentence_store
 
 
-def create_feature_and_target_file():
+def create_feature_and_target_file() -> None:
     import_data_and_store_sentence_objects()
 
     list_of_add_new_feature_subclasses = [
