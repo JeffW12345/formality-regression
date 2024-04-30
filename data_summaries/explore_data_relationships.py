@@ -9,13 +9,13 @@ class ExploreDataRelationships:
     def __init__(self):
         self._set_directory_to_current_directory()
 
-        self.all_fields_except_sentences: DataFrame = pd.read_csv(r"..\csv_files\complete_data.csv") \
+        self.all_fields_except_sentences: DataFrame = pd.read_csv(r"..\source_target_and_feature_csv_files\complete_data.csv") \
             .drop(['sentence_content', 'sentence_id'], axis=1)
 
-        self.features: DataFrame = pd.read_csv(r"..\csv_files\complete_data.csv") \
+        self.features: DataFrame = pd.read_csv(r"..\source_target_and_feature_csv_files\complete_data.csv")\
             .drop(['formality_score_from_raters', 'sentence_content', 'sentence_id'], axis=1)
 
-        self.targets: DataFrame = pd.read_csv(r"..\csv_files\complete_data.csv") \
+        self.targets: DataFrame = pd.read_csv(r"..\source_target_and_feature_csv_files\complete_data.csv") \
             [['formality_score_from_raters']]
 
     def write_correlations_to_file(self):
@@ -43,3 +43,7 @@ class ExploreDataRelationships:
     def _set_directory_to_current_directory(self):
         current_dir = os.path.dirname(os.path.realpath(__file__))
         os.chdir(current_dir)
+
+explore = ExploreDataRelationships()
+explore.generate_histogram_for_field(bins=20)
+

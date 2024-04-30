@@ -10,7 +10,7 @@ class MachineLearningAlgorithm(ABC):
     def __init__(self):
         self._set_os_to_current_directory()
         self.results: Results = Results()
-        self.df: DataFrame = pd.read_csv(r"..\csv_files\complete_data.csv")
+        self.df: DataFrame = pd.read_csv(r"..\source_target_and_feature_csv_files\complete_data.csv")
         self.X = self.df.drop(['formality_score_from_raters', 'sentence_content'], axis=1).to_numpy()
         self.y = self.df['formality_score_from_raters'].to_numpy()
 
