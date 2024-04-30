@@ -68,20 +68,18 @@ RESULTS
 
 The results.csv spreadsheet is presented below:
 
-![img.png](results_summary.png)
+![img.png](results_table.png)
 
 The 'root mean squared' figure approximates to 0.87 for all the tests. What this broadly means is that, on average, 
 the ratings were within 0.87 of the correct figure. As the histogram below shows, the ratings are widely distributed 
 across the full rating spectrum of 1-7. 
 
-It is therefore not the case that this accuracy was obtained as a result of the vast majority of the target values being
-clustered around a narrow range of values. 
 
 ![img_1.png](distribution_of_formality_scores_histogram.png)
 
-The 'mean absolute error' field simply represents the square root of the 'root mean squared' value.
+It is therefore not the case that the level of accuracy achieved was obtained as a result of the vast majority of the 
+target values being clustered around a narrow range of values. 
 
 The R squared value represents the extent to which the results can be explained by the model. The results suggest that 
 about 57 percent of the results can be explained by the model, which implies that it beat random predictions to a 
-significant degree. 
-
+significant degree.

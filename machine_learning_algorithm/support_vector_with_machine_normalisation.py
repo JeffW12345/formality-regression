@@ -16,7 +16,6 @@ class SVMRegressionWithNormalization(MachineLearningAlgorithm):
     def train_test_and_publish(self) -> None:
         kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
-        mean_squared_error_scores = []
         rmse_scores = []
         r2_scores = []
 
@@ -34,14 +33,12 @@ class SVMRegressionWithNormalization(MachineLearningAlgorithm):
             y_pred = model.predict(X_test_scaled)
 
             mse = mean_squared_error(y_test, y_pred)
-            mean_squared_error_scores.append(mse)
             rmse_scores.append(np.sqrt(mse))
             r2_scores.append(r2_score(y_test, y_pred))
 
-        self.publish_results(mean_squared_error_scores, r2_scores, rmse_scores)
+        self.publish_results(r2_scores, rmse_scores)
 
-    def publish_results(self, mean_squared_error_scores, r2_scores, rmse_scores):
-        self.results.mean_squared_error = np.mean(mean_squared_error_scores)
+    def publish_results(self, r2_scores, rmse_scores):
         self.results.root_mean_squared_error = np.mean(rmse_scores)
         self.results.r_squared = np.mean(r2_scores)
         self.results.has_normalisation = True

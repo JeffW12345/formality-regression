@@ -11,7 +11,6 @@ class Results:
         self.has_standardisation = False
         self.root_mean_squared_error = None
         self.r_squared = None
-        self.mean_absolute_error = None
 
     def print_to_spreadsheet(self):
         self._set_directory_to_current_location()
