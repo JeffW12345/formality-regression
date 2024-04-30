@@ -18,17 +18,33 @@ PROJECT STRUCTURE
 
 **Additional feature generation and storage**
 
-The _feature_generation_and_storage_ package contains code which imports a CSV containing the original 7,000 sentences and 
-data about those sentences (such as number of characters). It derives additional features from the sentences, relating 
-to things such as the number of nouns and verbs in search sentence, the number of spelling and grammar error per 
+The _feature_generation_and_storage_ package contains code which imports a CSV containing the original 7,000 sentences 
+and data about those sentences (such as number of characters). It derives additional features from the sentences, 
+relating to things such as the number of nouns and verbs in search sentence, the number of spelling and grammar error per 
 character in the sentence, and how emotionally charged the content is. 
 
-The additional feature generation and collation is controlled by the data_collection_controller.py module. 
+The additional feature generation and collation is controlled by the data_collection_controller.py module. Running that
+module's 'create_feature_and_target_file()' function results in the creation of a csv file containing the additional 
+features. 
 
 **CSV files containing features and target**
 
 The original CSV file and the CSV file with the additional features (called complete_data.csv) are stored in the 
-csv_files folder.
+'source_target_and_feature_csv_files' directory.
+
+**Exploring the data**
+
+The data_summaries package contains an ExploreDataRelationships class which has methods that do the following:
+
+- Produce a spreadsheet that provides correlations data for the features and the target data, making it possible to 
+explore correlations between features and between individual features and the target (the sentence ratings).
+
+- Produce a spreadsheet that summarises each of the feature fields and the target fields, in terms of things like mean 
+and standard deviation. 
+
+- Generate a histogram relating to the target or to any feature field. 
+
+- Generate a 'feature to target' scatter graph for any feature.
 
 **Model building and publishing**
 
@@ -44,3 +60,5 @@ RUNNING THE TESTS
 
 The tests can be run by running the 'main' module. Doing so will result in the 'results.csv' csv file in the 'results' 
 directory being updated with the latest results.
+
+A requirements.txt file is included in the repository. 

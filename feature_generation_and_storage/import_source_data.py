@@ -6,7 +6,7 @@ from feature_generation_and_storage.sentence_storage import sentence_store
 
 
 def import_data_and_store_sentence_objects():
-    file_path = "../csv_files/original_formality_dataset.csv"
+    file_path = "../source_target_and_feature_csv_files/original_formality_dataset.csv"
 
     if os.path.exists(file_path):
         original_data_dataframe = pd.read_csv(file_path)

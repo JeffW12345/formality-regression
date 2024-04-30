@@ -14,7 +14,7 @@ class Results:
         self.mean_absolute_error = None
 
     def print_to_spreadsheet(self):
-        self._set_os_to_current_directory()
+        self._set_directory_to_current_location()
         filename = "results.csv"
         df = pd.DataFrame([vars(self)])
 
@@ -27,12 +27,11 @@ class Results:
         else:
             df.to_csv(filename, index=False)
 
-
     def _round_dataframe_to_three_decimal_places(self, df):
         numeric_cols = df.select_dtypes(include=['number']).columns
         df[numeric_cols] = df[numeric_cols].round(3)
 
-    def _set_os_to_current_directory(self):
+    def _set_directory_to_current_location(self):
         current_dir = os.path.dirname(os.path.realpath(__file__))
         os.chdir(current_dir)
 

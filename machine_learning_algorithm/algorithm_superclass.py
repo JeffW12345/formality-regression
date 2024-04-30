@@ -6,7 +6,6 @@ from pandas import DataFrame
 
 from results.results import Results
 
-
 class MachineLearningAlgorithm(ABC):
     def __init__(self):
         self._set_os_to_current_directory()
